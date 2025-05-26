@@ -29,7 +29,7 @@ setFeaturedData(chosenInfo);
   return (
     <div className='page'>
 
-      {FeaturedData && <FeaturedMovie item={featuredData} />}
+      {featuredData && <FeaturedMovie featuredData={featuredData} />}
 
       <section className='lists'>
         {movieList.map((item, key) => (
