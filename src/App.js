@@ -19,9 +19,9 @@ export default () => {
       let randomChosen = Math.floor(
         Math.random() * originals[0].items.results.length
       );
-let chosen = originals[0].items.results[randomChosen];
-let chosenInfo = await Tmdb.getMovieInfo(chosen.id, 'tv');
-setFeaturedData(chosenInfo);
+      let chosen = originals[0].items.results[randomChosen];
+      let chosenInfo = await Tmdb.getMovieInfo(chosen.id, 'tv');
+      setFeaturedData(chosenInfo);
     };
     loadAll();
   }, [])
@@ -29,7 +29,7 @@ setFeaturedData(chosenInfo);
   return (
     <div className='page'>
 
-      {featuredData && <FeaturedMovie featuredData={featuredData} />}
+      {featuredData && <FeaturedMovie item={featuredData} />}
 
       <section className='lists'>
         {movieList.map((item, key) => (

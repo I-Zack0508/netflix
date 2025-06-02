@@ -5,5 +5,11 @@
 .featured-vertical{
     width: inherit;
     height: inherit;
-    background: linear-gradient(to top, #111 10%, transparent 90%);
+    background: linear-gradient(to top, #280050 10%, transparent 90%);
+}
+
+.featured-horizontal{
+    width: inherit;
+    height: inherit;
+    background: linear-gradient(to right, #280050 20%, transparent 80%);
 }
