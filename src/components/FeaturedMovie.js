@@ -4,12 +4,18 @@ import './FeaturedMovie.css';
 export default ({ item }) => {
     if (!item) return null;
 
-    let  firstDate = new Date(item.first_air_date);
+    let firstDate = new Date(item.first_air_date);
     let genres = [];
-    for (let i in item.genres){
+    let description = item.overview;
+
+    if (description.lenght > 200) {
+        description = description.substring(0, 200) + '...'
+    }
+
+    for (let i in item.genres) {
         genres.push(item.genres[i].name)
     }
-    
+
     return (
         <section className="featured"
             style={{
@@ -31,6 +37,11 @@ export default ({ item }) => {
                         </div>
                         <div className="featured-description">{item.overview}</div>
                         <div className="featured-buttons"></div>
+
+                        <div className='featured-buttons'>
+                            <a className="featured-watchbtn" href={`/watch/${item.id}`}> Assistir</a>
+                            <a className="featured-listbtn" href={`/list/add/${item.id}`}> + Minha lista</a>
+                        </div>
                         <div className="featured-genres">
                             <strong>Gêneros:</strong>{genres.join(', ')}
                         </div>

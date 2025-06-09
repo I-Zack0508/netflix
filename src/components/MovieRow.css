@@ -7,8 +7,18 @@
 }
 
 .movieRow-listarea {
-    overflow-x: hidden;
+    overflow-x: scroll;
+    overflow-y: hidden;
     padding-left: 30px;
+    white-space: nowrap;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* acho que vai dar algum erro */
+.movieRow-list{ 
+    display: inline-block;
+    transition: all ease 0.5s;
 }
 
 .movieRow-item {
@@ -27,4 +37,32 @@
 
 .movieRow-item img:hover {
     transform: scale(1);
+}
+
+.movieRow-right,
+.movieRow-left {
+    position: absolute;
+    width: 40px;
+    height: 225px;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    opacity: 0;
+}
+
+.movieRow:hover .movieRow-left,
+.movieRow:hover .movieRow-right {
+    opacity: 1;
+}
+
+.moviewRow-left{
+    left: 0;
+}
+
+.movieRow-right{
+    right: 0;
 }
